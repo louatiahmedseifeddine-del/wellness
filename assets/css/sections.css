@@ -1,0 +1,1516 @@
+/* ==========================================================================
+   Her Wellness Daily — sections layer
+   Section 1: header · metadata · headline · standfirst · hero · intro
+   Append new section blocks below as the article grows.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Site header — centered typographic wordmark
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  background-color: var(--c-white);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.site-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .site-header .shell { min-height: 4.25rem; }
+}
+
+.wordmark {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  text-indent: 0.2em;   /* optical balance against trailing letterspace */
+}
+
+@media (min-width: 48em) {
+  .wordmark {
+    font-size: 1.3125rem;
+    letter-spacing: 0.26em;
+    text-indent: 0.26em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Article shell
+   -------------------------------------------------------------------------- */
+
+.article {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Editorial metadata row
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+}
+
+.eyebrow__sep {
+  margin-inline: 0.5em;
+  color: var(--c-rule);
+  font-weight: 400;
+}
+
+.eyebrow__date {
+  color: var(--c-ink-muted);
+  font-weight: 500;
+}
+
+@media (min-width: 48em) {
+  .eyebrow { font-size: 0.75rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Headline
+   -------------------------------------------------------------------------- */
+
+.headline {
+  margin-top: var(--space-sm);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.625rem, 1.05rem + 3.2vw, 2.625rem);  /* 26px → 42px */
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+/* --------------------------------------------------------------------------
+   Standfirst (subheadline)
+   -------------------------------------------------------------------------- */
+
+.standfirst {
+  margin-top: var(--space-md);
+  max-width: 36rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--c-ink-soft);
+}
+
+@media (min-width: 48em) {
+  .standfirst { font-size: 1.1875rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Hero image — full-bleed on mobile, contained on desktop
+   Aspect ratios are fixed in CSS to hold layout (no CLS).
+   -------------------------------------------------------------------------- */
+
+.hero {
+  margin-top: var(--space-lg);
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 40%;   /* keeps the subject's face in frame on crop */
+  background-color: var(--c-neutral);
+}
+
+.hero__note {
+  margin-inline: auto;
+  margin-top: var(--space-xs);
+  max-width: calc(var(--measure) + var(--gutter) * 2);
+  padding-inline: var(--gutter);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--c-ink-muted);
+}
+
+@media (min-width: 48em) {
+  .hero {
+    margin-inline: auto;
+    max-width: calc(var(--wide) + var(--gutter) * 2);
+    padding-inline: var(--gutter);
+  }
+
+  .hero__img { aspect-ratio: 16 / 9; }
+}
+
+/* --------------------------------------------------------------------------
+   Article body
+   -------------------------------------------------------------------------- */
+
+.article__body {
+  margin-top: var(--space-lg);
+}
+
+.article__body > p + p {
+  margin-top: var(--space-sm);
+}
+
+.article__body > p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--c-ink);
+  text-wrap: pretty;
+}
+
+.lede {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+}
+
+@media (min-width: 48em) {
+  .article__body > p { font-size: 1.125rem; }
+  .lede { font-size: 1.1875rem !important; }
+}
+
+/* Emphasized single-sentence statement */
+.pull-statement {
+  margin-top: var(--space-lg) !important;
+  margin-bottom: var(--space-lg);
+  padding-top: var(--space-md);
+  font-family: var(--f-display);
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.5rem) !important;
+  font-weight: 600;
+  line-height: 1.35 !important;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  position: relative;
+}
+
+.pull-statement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2px;
+  background-color: var(--c-burgundy);
+}
+
+.article__body > .pull-statement + p {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial disclosure
+   -------------------------------------------------------------------------- */
+
+.disclosure {
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-neutral);
+  border-left: 2px solid var(--c-burgundy);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+.disclosure__label {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+@media (min-width: 48em) {
+  .disclosure { font-size: 0.875rem; }
+}
+
+/* ==========================================================================
+   SECTION 2 — Ranking methodology
+   ========================================================================== */
+
+/* Shared section scaffolding — reusable by later sections */
+.section {
+  margin-top: var(--space-xl);
+}
+
+.section--divided {
+  border-top: 1px solid var(--c-rule);
+  padding-top: var(--space-lg);
+}
+
+.section-title {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.4375rem, 1.1rem + 1.7vw, 1.875rem);  /* 23px → 30px */
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+.section-intro {
+  margin-top: var(--space-sm);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--c-ink-body);
+  text-wrap: pretty;
+}
+
+@media (min-width: 48em) {
+  .section-intro { font-size: 1.125rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Evaluation criteria — numbers are generated, not authored
+   -------------------------------------------------------------------------- */
+
+.criteria {
+  counter-reset: criterion;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--c-rule);
+}
+
+.criterion {
+  counter-increment: criterion;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  column-gap: 0.75rem;
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.criterion::before {
+  content: counter(criterion, decimal-leading-zero);
+  font-family: var(--f-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.85;            /* optically aligns the numeral to the title */
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-burgundy);
+}
+
+.criterion__title {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--c-ink);
+}
+
+.criterion__text {
+  margin-top: var(--space-2xs);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c-ink-body);
+  text-wrap: pretty;
+}
+
+@media (min-width: 48em) {
+  .criterion {
+    grid-template-columns: 4rem 1fr;
+    column-gap: 1rem;
+    padding-block: var(--space-md);
+  }
+
+  .criterion::before { font-size: 0.875rem; line-height: 1.8; }
+  .criterion__title  { font-size: 1.1875rem; }
+  .criterion__text   { font-size: 1.0625rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Methodology transparency note — understated, no fill
+   -------------------------------------------------------------------------- */
+
+.method-note {
+  margin-top: var(--space-md);
+}
+
+.method-note__title {
+  font-family: var(--f-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+.method-note__text {
+  margin-top: var(--space-2xs);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--c-ink-muted);
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   Transition into the ranking
+   -------------------------------------------------------------------------- */
+
+.transition {
+  margin-top: var(--space-xl);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+@media (min-width: 48em) {
+  .transition { font-size: 1.1875rem; }
+}
+
+/* ==========================================================================
+   SECTION 3 — Top 5 comparison overview
+   ========================================================================== */
+
+.products {
+  counter-reset: rank;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product {
+  counter-increment: rank;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--c-rule);
+}
+
+.product:first-child { border-top: 0; }
+
+/* Featured entry — restrained burgundy accent, white ground, no badge or glow */
+.product--featured {
+  border-top: 2px solid var(--c-burgundy);
+  padding-top: var(--space-md);
+}
+
+.product__flag {
+  font-family: var(--f-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+}
+
+/* --- media ---------------------------------------------------------------- */
+
+.product__media {
+  display: flex;
+  justify-content: center;
+}
+
+.product__img {
+  width: 100%;
+  max-width: 11rem;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background-color: var(--c-neutral);
+}
+
+.product--featured .product__img { max-width: 15rem; }
+
+/* --- body ----------------------------------------------------------------- */
+
+.product__rank::before {
+  content: "#" counter(rank);
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--c-burgundy);
+}
+
+.product--featured .product__rank::before { font-size: 1.25rem; }
+
+.product__name {
+  margin-top: 0.125rem;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+.product--featured .product__name { font-size: 1.4375rem; }
+
+.product__designation {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: var(--c-ink-muted);
+}
+
+.product--featured .product__designation { color: var(--c-burgundy); }
+
+.product__text {
+  margin-top: var(--space-sm);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c-ink-body);
+  text-wrap: pretty;
+}
+
+/* --- specification list --------------------------------------------------- */
+
+.spec-list__label {
+  margin-top: var(--space-sm);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+
+.spec-list {
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--c-rule);
+}
+
+.spec-list__label + .spec-list { margin-top: 0.5rem; }
+
+.spec-list > li {
+  position: relative;
+  padding: 0.4375rem 0 0.4375rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-body);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.spec-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9375rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--c-burgundy);
+}
+
+.spec__term {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+/* --- desktop: image beside copy, consistent across all five entries -------- */
+
+@media (min-width: 48em) {
+  .product {
+    grid-template-columns: 9.5rem 1fr;
+    column-gap: var(--space-md);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .product--featured { grid-template-columns: 13.5rem 1fr; }
+
+  .product__flag { grid-column: 1 / -1; margin-bottom: var(--space-sm); }
+
+  .product__img         { max-width: 100%; }
+  .product__name        { font-size: 1.3125rem; }
+  .product--featured .product__name { font-size: 1.5rem; }
+  .product__text        { font-size: 1.0625rem; }
+}
+
+/* ==========================================================================
+   SECTIONS 4–6 — Detailed product reviews
+   One component set, shared by every review entry. Section 4 (featured)
+   differs only by the flag label and a larger product image.
+   ========================================================================== */
+
+/* --- review heading ------------------------------------------------------- */
+
+.review__flag {
+  font-family: var(--f-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+  margin-bottom: var(--space-xs);
+}
+
+.review__title {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.4375rem, 1.1rem + 1.7vw, 1.875rem);
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+.review__rank {
+  color: var(--c-burgundy);
+}
+
+.review__rank::after {
+  content: " — ";
+  color: var(--c-ink-muted);
+  font-weight: 400;
+}
+
+.review__designation {
+  margin-top: var(--space-2xs);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: var(--c-burgundy);
+}
+
+.subsection-title {
+  margin-top: var(--space-xl);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.1875rem, 1.05rem + 0.9vw, 1.375rem);
+  line-height: 1.3;
+  letter-spacing: -0.008em;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+/* --- product presentation ------------------------------------------------- */
+
+.review-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.review-hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.review-hero__img {
+  width: 100%;
+  max-width: 13rem;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background-color: var(--c-neutral);
+}
+
+.review--featured .review-hero__img { max-width: 16rem; }
+
+.review__text {
+  margin-top: var(--space-sm);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--c-ink-body);
+  text-wrap: pretty;
+}
+
+.review-hero__body > .review__text:first-child { margin-top: 0; }
+
+@media (min-width: 48em) {
+  .review-hero {
+    grid-template-columns: 12rem 1fr;
+    column-gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .review--featured .review-hero { grid-template-columns: 14rem 1fr; }
+
+  .review-hero__img { max-width: 100%; }
+}
+
+/* --- ingredient dose line (Section 4 formula blocks) ---------------------- */
+
+.formula__dose {
+  margin-top: 0.3125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--c-burgundy);
+}
+
+.criteria--formula { margin-top: var(--space-md); }
+
+/* --- informational note --------------------------------------------------- */
+
+.note {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-neutral);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--c-ink-soft);
+}
+
+/* --- two-column conceptual comparison ------------------------------------- */
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.compare__col {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-neutral);
+}
+
+.compare__col--featured {
+  background-color: var(--c-rose);
+}
+
+.compare__title {
+  font-family: var(--f-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+.compare__col--featured .compare__title { color: var(--c-burgundy); }
+
+.compare__list {
+  margin: var(--space-xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.compare__list > li {
+  padding: 0.3125rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--c-ink-body);
+}
+
+.compare__note {
+  margin-top: var(--space-xs);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+
+@media (min-width: 48em) {
+  .compare { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+}
+
+/* --- qualitative facts / product characteristics -------------------------- */
+
+.facts {
+  margin: var(--space-md) 0 0;
+  border-top: 1px solid var(--c-rule);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.125rem;
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.fact__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--c-ink);
+}
+
+.fact__value {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-body);
+}
+
+@media (min-width: 48em) {
+  .fact {
+    grid-template-columns: 13rem 1fr;
+    column-gap: var(--space-md);
+    align-items: baseline;
+  }
+  .fact__label { font-size: 0.875rem; }
+  .fact__value { font-size: 1rem; }
+}
+
+/* --- pros and cons -------------------------------------------------------- */
+
+.proscons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.proscons__col {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-neutral);
+}
+
+.proscons__title {
+  font-family: var(--f-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+.proscons__list {
+  margin: var(--space-xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proscons__list > li {
+  position: relative;
+  padding: 0.3125rem 0 0.3125rem 1.375rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-body);
+}
+
+.proscons__list > li::before {
+  position: absolute;
+  left: 0;
+  top: 0.3125rem;
+  font-size: 0.8125rem;
+  line-height: 1.85;
+}
+
+.proscons__col--pro .proscons__list > li::before {
+  content: "\2713";              /* check */
+  color: var(--c-burgundy);
+}
+
+.proscons__col--con .proscons__list > li::before {
+  content: "\00D7";              /* multiplication sign — restrained X */
+  color: var(--c-ink-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 48em) {
+  .proscons { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+}
+
+/* --- guarantee preview ---------------------------------------------------- */
+
+.guarantee {
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-rose);
+}
+
+.guarantee__title {
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-ink);
+}
+
+.guarantee__text {
+  margin-top: 0.3125rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+.guarantee__text a {
+  color: var(--c-burgundy);
+  text-underline-offset: 0.15em;
+}
+
+/* --- contextual CTA ------------------------------------------------------- */
+
+.cta {
+  margin-top: var(--space-md);
+}
+
+.cta__button {
+  display: block;
+  width: 100%;
+  padding: 1.0625rem 1.5rem;
+  background-color: var(--c-burgundy);
+  color: var(--c-white);
+  font-family: var(--f-text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+
+.cta__button:hover,
+.cta__button:focus-visible {
+  background-color: #6F3145;
+}
+
+.cta__note {
+  margin-top: var(--space-xs);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+
+@media (min-width: 48em) {
+  .cta__button {
+    display: inline-block;
+    width: auto;
+    padding: 1.0625rem 2.25rem;
+    font-size: 1.0625rem;
+  }
+}
+
+/* ==========================================================================
+   SECTION 8 — Head-to-head comparison table
+   Real <table> semantics; scrolls horizontally on narrow screens with the
+   row-header column pinned so values never lose their label.
+   ========================================================================== */
+
+.ctable-cue {
+  margin-top: var(--space-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+
+.ctable-wrap {
+  margin-top: var(--space-xs);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid var(--c-rule);
+}
+
+.ctable {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.ctable th,
+.ctable td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.ctable thead th {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  border-bottom: 1px solid var(--c-ink);
+}
+
+.ctable tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 9.5rem;
+  background-color: var(--c-white);
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.ctable td { color: var(--c-ink-body); }
+
+.ctable__veylen { background-color: var(--c-rose); }
+.ctable thead .ctable__veylen { color: var(--c-burgundy); }
+
+@media (min-width: 48em) {
+  .ctable-cue { display: none; }
+  .ctable-wrap { margin-top: var(--space-md); }
+  .ctable { min-width: 0; font-size: 0.9375rem; }
+  .ctable tbody th { position: static; }
+}
+
+/* ==========================================================================
+   SECTION 9 — Final verdict
+   ========================================================================== */
+
+.section--capped { border-top: 0; }
+
+.accent-rule {
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: var(--space-sm);
+  background-color: var(--c-burgundy);
+}
+
+/* --- five-product summary -------------------------------------------------
+   A list, not a <table>: each cell holds a sentence, so on a phone this
+   stacks into labelled blocks instead of three unreadable prose columns.
+   On desktop it lines up as a table with a single header row.
+   -------------------------------------------------------------------------- */
+
+.summary {
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--c-ink);
+}
+
+.summary__head {
+  display: none;
+}
+
+.summary__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xs);
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.summary__row--featured { background-color: var(--c-rose); }
+
+.summary__product {
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-ink);
+}
+
+.summary__row--featured .summary__product { color: var(--c-burgundy); }
+
+.summary__label {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+
+.summary__cell {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-body);
+}
+
+@media (min-width: 48em) {
+  .summary__head {
+    display: grid;
+    grid-template-columns: 11rem 1fr 1fr;
+    column-gap: var(--space-md);
+    padding-block: var(--space-xs);
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .summary__head span {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-ink);
+  }
+
+  .summary__row {
+    grid-template-columns: 11rem 1fr 1fr;
+    column-gap: var(--space-md);
+    align-items: start;
+  }
+
+  .summary__row--featured {
+    background-color: transparent;
+    box-shadow: inset 2px 0 0 var(--c-burgundy);
+  }
+
+  .summary__row > * { padding-inline: 0; }
+  .summary__row--featured > :first-child { padding-left: 0.75rem; }
+  .summary__label { display: none; }
+}
+
+.summary__row > * { padding-inline: var(--space-sm); }
+
+@media (min-width: 48em) {
+  .summary__head { padding-inline: 0; }
+  .summary__row > * { padding-inline: 0; }
+  .summary__row--featured > :first-child { padding-left: 0.75rem; }
+}
+
+/* --- compact product reminder --------------------------------------------- */
+
+.reminder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--c-neutral);
+}
+
+.reminder__media { display: flex; justify-content: center; }
+
+.reminder__img {
+  width: 100%;
+  max-width: 9rem;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.reminder__flag {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+}
+
+.reminder__name {
+  margin-top: 0.25rem;
+  font-family: var(--f-display);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-ink);
+}
+
+.reminder__list {
+  margin: var(--space-xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reminder__list > li {
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--c-ink-body);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.reminder__list > li:last-child { border-bottom: 0; }
+
+@media (min-width: 48em) {
+  .reminder {
+    grid-template-columns: 10rem 1fr;
+    column-gap: var(--space-lg);
+    align-items: center;
+  }
+  .reminder__img { max-width: 100%; }
+}
+
+/* --- closing transition --------------------------------------------------- */
+
+.closing-title {
+  margin-top: var(--space-lg);
+  font-family: var(--f-display);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+
+.closing-text {
+  margin-top: var(--space-2xs);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c-ink-body);
+}
+
+/* ==========================================================================
+   SECTION 10 — Offer
+   ========================================================================== */
+
+.offer__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+  margin-bottom: var(--space-xs);
+}
+
+.offer__subhead {
+  margin-top: var(--space-xs);
+  font-family: var(--f-display);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-burgundy);
+  text-wrap: balance;
+}
+
+.bundle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--c-neutral);
+  align-items: center;
+}
+
+.bundle__media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.bundle__bottle {
+  width: 100%;
+  max-width: 6rem;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.bundle__bottle:nth-child(2) { max-width: 7rem; }
+
+.bundle__flag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-burgundy);
+}
+
+.bundle__spec {
+  margin-top: 0.25rem;
+  font-family: var(--f-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-ink);
+}
+
+.bundle__pending {
+  margin-top: var(--space-xs);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+
+@media (min-width: 48em) {
+  .bundle { grid-template-columns: 45% 1fr; column-gap: var(--space-lg); }
+  .bundle__bottle { max-width: 100%; }
+  .bundle__bottle:nth-child(2) { max-width: 100%; }
+}
+
+.policy-list {
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--c-rule);
+}
+
+.policy-list > li {
+  position: relative;
+  padding: 0.4375rem 0 0.4375rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-body);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.policy-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9375rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--c-burgundy);
+}
+
+.policy-link {
+  margin-top: var(--space-sm);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.policy-link a { color: var(--c-burgundy); text-underline-offset: 0.15em; }
+
+.cta__button--lg {
+  min-height: 3.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trustline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem var(--space-md);
+  margin: var(--space-md) 0 0;
+  padding: var(--space-sm) 0;
+  list-style: none;
+  border-top: 1px solid var(--c-rule);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.trustline > li {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-ink-soft);
+}
+
+.trustline__note {
+  margin-top: var(--space-xs);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+
+/* ==========================================================================
+   SECTION 11 — FAQ, legal, footer
+   ========================================================================== */
+
+.faq {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--c-rule);
+}
+
+.faq__item { border-bottom: 1px solid var(--c-rule); }
+
+.faq__q {
+  position: relative;
+  padding: var(--space-sm) 2rem var(--space-sm) 0;
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--c-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__q::-webkit-details-marker { display: none; }
+
+.faq__q::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--f-text);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--c-burgundy);
+}
+
+.faq__item[open] > .faq__q::after { content: "\2212"; }
+
+.faq__q:hover { color: var(--c-burgundy); }
+
+.faq__a { padding-bottom: var(--space-sm); }
+
+.faq__a p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c-ink-body);
+}
+
+.faq__a p + p { margin-top: var(--space-xs); }
+
+.faq__a a { color: var(--c-burgundy); text-underline-offset: 0.15em; }
+
+@media (min-width: 48em) {
+  .faq__q { font-size: 1.125rem; }
+  .faq__a p { font-size: 1.0625rem; }
+}
+
+/* --- legal ---------------------------------------------------------------- */
+
+.legal {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--c-rule);
+}
+
+.legal__title {
+  margin-top: var(--space-md);
+  font-family: var(--f-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+.legal__title:first-child { margin-top: 0; }
+
+.legal__text {
+  margin-top: var(--space-2xs);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--c-ink-soft);
+}
+
+/* --- footer --------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: var(--space-xl);
+  padding-block: var(--space-lg);
+  background-color: var(--c-neutral);
+  border-top: 1px solid var(--c-rule);
+  text-align: center;
+}
+
+.site-footer__wordmark {
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  text-indent: 0.2em;
+}
+
+.site-footer__tagline {
+  margin-top: var(--space-2xs);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+
+.site-footer__groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  max-width: 24rem;
+  margin: var(--space-lg) auto 0;
+  text-align: left;
+}
+
+.site-footer__heading {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+.site-footer__list {
+  margin: var(--space-2xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__list > li {
+  padding: 0.3125rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+
+.site-footer__copy {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--c-rule);
+  font-size: 0.75rem;
+  color: var(--c-ink-muted);
+}
+
+.site-footer__note {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--c-ink-muted);
+}
+
+/* ==========================================================================
+   AUDIT — Phase 3: mobile body copy held at 16px+
+   Descriptive list copy was 15px on phones; raised to 16px at <48em so no
+   substantive text drops below the readable floor for cold mobile traffic.
+   ========================================================================== */
+
+@media (max-width: 47.99em) {
+  .spec-list > li,
+  .proscons__list > li,
+  .compare__list > li,
+  .policy-list > li,
+  .summary__cell,
+  .bundle__pending,
+  .criterion__text,
+  .fact__value {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .legal__text,
+  .note { font-size: 0.9375rem; }
+}
+
+/* Phase 4 — presentation-order clarification */
+.order-note {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--c-neutral);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--c-ink-soft);
+}
+
+/* ==========================================================================
+   AUDIT FIXES
+   ========================================================================== */
+
+/* Phase 1/3 — three-bottle composition overflowed its column at 768-1024px:
+   three flex children each allowed max-width:100% of the same container.
+   Size them as flex tracks instead so the group always fits. */
+.bundle__media > .bundle__bottle {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 7rem;
+}
+
+.bundle__media > .bundle__bottle:nth-child(2) {
+  flex: 1.15 1 0;
+  max-width: 8rem;
+}
+
+@media (min-width: 48em) {
+  .bundle__media > .bundle__bottle,
+  .bundle__media > .bundle__bottle:nth-child(2) { max-width: none; }
+}
+
+/* Phase 3 — smallest uppercase labels were 10px; raised to 11px to match the
+   eyebrow labels used elsewhere (.offer__label, .product__flag, .review__flag). */
+.summary__label,
+.reminder__flag,
+.site-footer__heading { font-size: 0.6875rem; }

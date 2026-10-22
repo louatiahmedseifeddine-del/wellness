@@ -1,0 +1,49 @@
+{
+  "_comment": "NONPUBLIC CONTENT DATA — not referenced by index.html and not rendered in the published UI.",
+  "_status": "Proposed editorial positions and scores from the supplied comparison brief. NOT independently verified, NOT independently tested, and NOT the output of a calculated rubric.",
+  "_publication_gate": "Grades and ratings must stay hidden in the UI until a documented scoring rubric exists that maps the five Section 2 criteria to a weighted score, and these values are recomputed from it. Do not surface these numbers to readers before then.",
+  "_ordering_note": "The 1-5 order is the planned article presentation order. It is NOT a sort of these scores (entry 5 scores above entries 2-4).",
+  "_deploy_note": "If the site is served as a static directory, this file would be publicly fetchable. Keep it out of the deployed build, or move it outside the web root, before launch.",
+  "rankings": [
+    {
+      "position": 1,
+      "product": "Veylen Labs GLP-1 Comfort+",
+      "designation": "Best Overall for Comprehensive GLP-1 Support",
+      "proposed_grade": "A+",
+      "proposed_rating": "9.8/10",
+      "published": false
+    },
+    {
+      "position": 2,
+      "product": "Metamucil Psyllium Fiber",
+      "designation": "Best-Known Fiber Option",
+      "proposed_grade": "C+",
+      "proposed_rating": "6.4/10",
+      "published": false
+    },
+    {
+      "position": 3,
+      "product": "Benefiber Prebiotic Fiber",
+      "designation": "Best for Easy Mixing",
+      "proposed_grade": "C",
+      "proposed_rating": "6.1/10",
+      "published": false
+    },
+    {
+      "position": 4,
+      "product": "Align 24/7 Digestive Support",
+      "designation": "Best for Probiotic-Focused Support",
+      "proposed_grade": "C+",
+      "proposed_rating": "6.6/10",
+      "published": false
+    },
+    {
+      "position": 5,
+      "product": "GLP-1 SOS Daily Gut Relief",
+      "designation": "Best Alternative GLP-1-Specific Formula",
+      "proposed_grade": "B",
+      "proposed_rating": "7.9/10",
+      "published": false
+    }
+  ]
+}

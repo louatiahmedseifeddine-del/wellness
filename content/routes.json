@@ -1,0 +1,20 @@
+{
+  "_comment": "Footer destinations. status:pending = page does not exist yet, so the footer renders it as PLAIN TEXT, not a link. No dead links ship.",
+  "_to_activate": "Create the page, set status to live and fill in path, then the footer item can become an <a>.",
+  "publication": [
+    { "label": "About Us", "path": "/about", "status": "pending" },
+    { "label": "Editorial Policy", "path": "/editorial-policy", "status": "pending" },
+    { "label": "Contact", "path": "/contact", "status": "pending",
+      "note": "No Her Wellness Daily email address was invented. Needs a verified business contact or a working contact form." }
+  ],
+  "legal": [
+    { "label": "Privacy Policy", "path": "/privacy", "status": "pending" },
+    { "label": "Terms of Use", "path": "/terms", "status": "pending" },
+    { "label": "Advertising Disclosure", "path": "/advertising-disclosure", "status": "pending",
+      "note": "In-article disclosure already exists in Sections 1 and 11; this would be the standalone page." }
+  ],
+  "company": {
+    "status": "unconfirmed",
+    "note": "Legal operator of herwellness-daily.com must be confirmed before launch. The brief mentions Carthage Retail Co. LLC as a possibility. Nothing is published until confirmed: no company name, address, registration or editorial credentials are rendered anywhere. If the operator is the same legal entity as Veylen Labs, that relationship must be disclosed explicitly rather than as affiliate wording."
+  }
+}

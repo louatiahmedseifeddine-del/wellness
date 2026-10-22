@@ -1,0 +1,23 @@
+{
+  "_comment": "NONPUBLIC OFFER DATA — not referenced by index.html, not rendered.",
+  "_blocker": "PRODUCT IDENTITY UNRESOLVED. Section 10 pricing and buy CTAs are withheld until a human confirms the Supplement Facts panel at the checkout destination.",
+  "_evidence": {
+    "homepage_veylenlabs.com": "States GLP-1 Comfort+ = magnesium 300 mg elemental, ginger 500 mg std. min 5% gingerols, Weizmannia coagulans BC99 2 Billion CFU, B1 5 mg / B6 5 mg / B12 50 mcg, and links it to /products/veylen-labs-support-complex.",
+    "product_page_same_url": "Two separate reads of /products/veylen-labs-support-complex returned Supplement Facts of magnesium 250 mg, ginger root extract 200 mg, 19-strain probiotic blend 50 mg — NOT the Comfort+ formula described in Sections 1-9.",
+    "conflict": "Same URL, contradictory ingredient panels. One of the two reads is wrong. Must be confirmed by viewing the live Supplement Facts panel directly.",
+    "why_it_matters": "Sections 1-9 describe the 300/500/BC99 formula throughout. Section 8 compares it ingredient-by-ingredient against GLP-1 SOS, whose published formula is 250 mg magnesium / 200 mg ginger / 19-strain blend — i.e. identical to the disputed panel. Publishing a buy link to the wrong SKU would contradict the article's own comparison."
+  },
+  "_also_affects": "The already-live CTAs in Section 4 and Section 9 point to this same product URL and need the same confirmation.",
+  "offer_as_published_on_product_page": {
+    "_status": "prices read 2026-10-22; NOT rendered pending the product-identity check above",
+    "bundles": [
+      { "name": "30-Day Starter", "bottles": 1, "price": "$34.99", "compare_at": "$49.99", "type": "one-time", "per_day": "$1.17" },
+      { "name": "Buy 2 Get 1 FREE", "bottles": 3, "price": "$69.98", "compare_at": "$149.97", "type": "one-time", "per_day": "$0.78", "label": "Best value" },
+      { "name": "Buy 3 Get 3 FREE", "bottles": 6, "price": "$104.97", "compare_at": "$299.99", "type": "one-time", "per_day": "$0.58" }
+    ],
+    "shipping": "Free shipping stated on all options",
+    "guarantee": "30-day, per published refund policy",
+    "purchase_type_note": "All three read as ONE-TIME purchases, not subscriptions. Re-confirm at checkout before publishing, and label explicitly."
+  },
+  "_to_unblock": "1) Open the checkout and read the Supplement Facts panel. 2) If it is the 300/500/BC99 Comfort+ formula, uncomment the pricing block and the two CTA buttons in Section 10 and fill in the verified figures above. 3) If it is the 250/200/19-strain formula, do NOT publish this offer — the article describes a different product."
+}

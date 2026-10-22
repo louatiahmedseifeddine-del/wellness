@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Product image placeholder for Align 24/7 Digestive Support">
+  <rect width="600" height="800" fill="#F8F7F5"/>
+  <rect x="16" y="16" width="568" height="768" fill="none" stroke="#F3E6EA" stroke-width="2"/>
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="300" y="312" font-size="22" letter-spacing="4" fill="#873D55">OFFICIAL PRODUCT</text>
+    <text x="300" y="346" font-size="22" letter-spacing="4" fill="#873D55">IMAGE REQUIRED</text>
+  </g>
+  <line x1="250" y1="384" x2="350" y2="384" stroke="#873D55" stroke-width="2"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" fill="#242424">
+    <text x="300" y="440" font-size="30">Align</text>
+    <text x="300" y="480" font-size="26">24/7 Digestive Support</text>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle" fill="#767676" font-size="18">
+    <text x="300" y="542">Source: official brand source</text>
+    <text x="300" y="572">Unaltered packaging · correct proportions</text>
+  </g>
+</svg>
