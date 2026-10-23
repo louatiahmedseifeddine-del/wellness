@@ -1618,3 +1618,20 @@
   .crit-table tbody td  { font-size: 1.0625rem; }
   .crit-table__num      { display: inline; margin-right: 0.5rem; }
 }
+
+/* --------------------------------------------------------------------------
+   Per-product evaluation graphic (grade / rating)
+   Sits directly under the review designation, where the briefs specified the
+   grade and rating should appear. Content is baked into the image, so the
+   alt text carries the grade, rating and review count verbatim.
+   -------------------------------------------------------------------------- */
+
+.eval { margin-top: var(--space-sm); }
+
+.eval__img {
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+}

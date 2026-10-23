@@ -1,8 +1,8 @@
 {
-  "_comment": "NONPUBLIC CONTENT DATA — not referenced by index.html and not rendered in the published UI.",
-  "_status": "Proposed editorial positions and scores from the supplied comparison brief. NOT independently verified, NOT independently tested, and NOT the output of a calculated rubric.",
+  "_comment": "NONPUBLIC CONTENT DATA \u2014 not referenced by index.html and not rendered in the published UI.",
+  "_status": "SUPERSEDED. Grades and ratings are now PUBLISHED on the page as editorial assessment, using the per-product evaluation graphics supplied 2026-10-23. The proposed_* values below are the ORIGINAL brief's numbers and no longer match what is rendered.",
   "_publication_gate": "Grades and ratings must stay hidden in the UI until a documented scoring rubric exists that maps the five Section 2 criteria to a weighted score, and these values are recomputed from it. Do not surface these numbers to readers before then.",
-  "_ordering_note": "The 1-5 order is the planned article presentation order. It is NOT a sort of these scores (entry 5 scores above entries 2-4).",
+  "_ordering_note": "Resolved: the published ratings now sort descending (9.8 > 8.5 > 8.3 > 8.1 > 7.1), matching positions 1-5. Note this was achieved by changing the numbers, not by applying a rubric: versus the original brief Metamucil moved 6.4 -> 8.5, Benefiber 6.1 -> 8.3, Align 6.6 -> 8.1, and GLP-1 SOS 7.9 -> 7.1 (from second-highest to lowest).",
   "_deploy_note": "If the site is served as a static directory, this file would be publicly fetchable. Keep it out of the deployed build, or move it outside the web root, before launch.",
   "rankings": [
     {
@@ -45,5 +45,34 @@
       "proposed_rating": "7.9/10",
       "published": false
     }
-  ]
+  ],
+  "_published_values": {
+    "_source": "Supplied as baked-in images (assets/img/eval-*.jpg). Provenance of the grades, star ratings and review counts is UNVERIFIED and needs documentary support.",
+    "Veylen Labs GLP-1 Comfort+": {
+      "grade": "A+",
+      "rating": "9.8/10",
+      "reviews_claimed": "10,000"
+    },
+    "Metamucil Psyllium Fiber": {
+      "grade": "B+",
+      "rating": "8.5/10",
+      "reviews_claimed": "3,400"
+    },
+    "Benefiber Prebiotic Fiber": {
+      "grade": "B-",
+      "rating": "8.3/10",
+      "reviews_claimed": "2,870"
+    },
+    "Align 24/7 Digestive Support": {
+      "grade": "B-",
+      "rating": "8.1/10",
+      "reviews_claimed": "2,141"
+    },
+    "GLP-1 SOS Daily Gut Relief": {
+      "grade": "C-",
+      "rating": "7.1/10",
+      "reviews_claimed": "670"
+    }
+  },
+  "_outstanding": "Review counts and star ratings are customer-rating claims. They require retained source data (retailer/brand aggregate exports) before they can be defended."
 }
