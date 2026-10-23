@@ -16,8 +16,8 @@
 .site-header .shell {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 3.5rem;
+  justify-content: flex-start;
+  min-height: 3.25rem;
 }
 
 @media (min-width: 48em) {
@@ -26,21 +26,15 @@
 
 .wordmark {
   font-family: var(--f-display);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
   line-height: 1;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
   color: var(--c-ink);
-  text-indent: 0.2em;   /* optical balance against trailing letterspace */
 }
 
 @media (min-width: 48em) {
-  .wordmark {
-    font-size: 1.3125rem;
-    letter-spacing: 0.26em;
-    text-indent: 0.26em;
-  }
+  .wordmark { font-size: 1.3125rem; }
 }
 
 /* --------------------------------------------------------------------------
@@ -85,12 +79,12 @@
    -------------------------------------------------------------------------- */
 
 .headline {
-  margin-top: var(--space-sm);
-  font-family: var(--f-display);
-  font-weight: 600;
-  font-size: clamp(1.625rem, 1.05rem + 3.2vw, 2.625rem);  /* 26px → 42px */
-  line-height: 1.15;
-  letter-spacing: -0.015em;
+  margin-top: var(--space-xs);
+  font-family: var(--f-text);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 1.05rem + 3.6vw, 2.75rem);   /* 28px → 44px */
+  line-height: 1.1;
+  letter-spacing: -0.032em;
   color: var(--c-ink);
   text-wrap: balance;
 }
@@ -123,10 +117,9 @@
 .hero__img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 40%;   /* keeps the subject's face in frame on crop */
-  background-color: var(--c-neutral);
+  aspect-ratio: 2 / 1;
+  object-fit: contain;        /* never crop: the outer products would be cut */
+  background-color: var(--c-white);
 }
 
 .hero__note {
@@ -145,8 +138,6 @@
     max-width: calc(var(--wide) + var(--gutter) * 2);
     padding-inline: var(--gutter);
   }
-
-  .hero__img { aspect-ratio: 16 / 9; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1514,3 +1505,51 @@
 .summary__label,
 .reminder__flag,
 .site-footer__heading { font-size: 0.6875rem; }
+
+
+/* --------------------------------------------------------------------------
+   Byline — publication-attributed, no portrait, no invented role
+   -------------------------------------------------------------------------- */
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--space-md);
+}
+
+.byline__mark {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--c-rose);
+  color: var(--c-burgundy);
+  font-family: var(--f-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.byline__text {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+
+.byline__text strong {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.byline__role {
+  font-size: 0.875rem;
+  color: var(--c-ink-muted);
+}
+
+@media (min-width: 48em) {
+  .byline__text { font-size: 1rem; }
+}
